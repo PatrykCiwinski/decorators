@@ -10,7 +10,7 @@ def speed_calc_decorator(time_passed):
         time_passed()
         end_time = time.time()
         time_check=end_time - start_time
-        print(f"{time_passed.__name__} runtime:{time_check} s")
+        return time_check
 
     return show_time_elapsed
 
@@ -29,5 +29,9 @@ def slow_function():
 
 
 
-fast_function()
-slow_function()
+first_run=fast_function()
+second_run=slow_function()
+
+#how much fast function is faster than slow one
+
+print(f"{second_run-first_run} s")
